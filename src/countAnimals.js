@@ -1,7 +1,6 @@
 const data = require('../data/zoo_data');
 
 const totalAnimais = (animal) => data.species.find((spec) => spec.name === animal.specie);
-// return totalAnimais[0].residents.length;
 const verificaMale = (animal) => totalAnimais(animal).residents
   .filter((residente) => residente.sex === 'male').length;
 const verificaFemale = (animal) => totalAnimais(animal).residents

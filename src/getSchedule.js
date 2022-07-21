@@ -9,7 +9,6 @@ function sentenceBuild(dayName) {
   const { open, close } = hours[dayName];
   return `Open from ${open}am until ${close}pm`;
 }
-// console.log(sentenceBuild('Monday'));
 
 function getAnimalByDay(dayName) {
   const beastDays = data.species.filter(({ availability }) => availability.includes(dayName))
@@ -18,11 +17,9 @@ function getAnimalByDay(dayName) {
     return beastDays;
   }
 }
-// console.log(getAnimalByDay('Friday'));
 
 function schedule() {
   Object.keys(hours).forEach((days) => {
-    // console.log(days);
     if (days === 'Monday') {
       dataHora[days] = {
         officeHour: 'CLOSED',
@@ -37,7 +34,6 @@ function schedule() {
     }
   });
 }
-// console.log(schedule('Monday'));
 
 function getSchedule(scheduleTarget) {
   schedule();
@@ -51,10 +47,7 @@ function getSchedule(scheduleTarget) {
   if (animDias.includes(scheduleTarget)) {
     return species.find((especie) => especie.name === scheduleTarget).availability;
   }
-  // if (scheduleTarget !== animDias || scheduleTarget !== dataHora) {
   return dataHora;
-  // }
 }
-console.log(getSchedule('lions'));
 
 module.exports = getSchedule;
